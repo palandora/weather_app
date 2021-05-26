@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&display=swap');
+
+$family: 'Open Sans', sans-serif;
+
+$font-size-caption: 12px;
+$font-size-reg: 16px;
+$font-size-headline: 40px;
+
+$font-bold: 700;
+$font-extra-bold: 800;
+
+$font-color-caption: #B5B5B5;
+$font-color-reg: #000;
+$font-color-accent: #FF6B18;
+
+$bg-divider: #efefef;
+$bg-light-grey: #fbfbfb;
+
+
+@mixin setDetails {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+        .label{
+            flex-basis: 100%;
+            padding-left: 12px;
+            display: flex;
+            flex-direction: column;
+            .caption{
+                font-size: $font-size-caption;
+                color: $font-color-caption;
+            }
+            .title{
+                font-weight: $font-bold;
+            }
+        }
+}
+
+
+*{
+    font-family: $family;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 80%;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #efefef;
+}
+
+.divider{
+    background-color: $bg-divider ;
+    height: 1px;
+}
+
+.header{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 20px;
+    user-select: none;
+    font: {
+        size: $font-size-reg;
+        weight: $font-bold;
+    }
+
+    .menu{
+        display: none;
+        padding: 8px 0;
+        position: absolute;
+        left: 20px;
+        top: 56px;
+        background-color: white;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        border: 1px solid $bg-divider;
+        border-radius: 8px;
+        & > div{
+            padding: 8px 20px;
+            &:hover {
+                background-color: $bg-light-grey;
+            }
+        }
+    }
+
+    .location{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        span{
+            padding-right: 4px;
+        }
+        svg{
+            fill: $font-color-caption;
+        }
+    }
+
+   
+}
+
+.mainInformation{
+    padding: 20px;
+    font: {
+        size: $font-size-headline;
+        weight: $font-extra-bold;
+    }
+    color: $font-color-caption;
+    span {
+        color: $font-color-accent;
+    }
+    #degrees::after{
+        content: " °C";
+    }
+}
+
+.details{
+
+    display: flex;
+    flex-wrap: wrap;
+    background: $bg-light-grey;
+    justify-content: space-between;
+
+    #humidity{
+        @include setDetails;
+        .title::after{
+            content: "%";
+        }
+    }
+    #wind{
+        @include setDetails;
+        .title::after{
+            content: "m/s";
+        }
+    }
+    #gusts{
+        @include setDetails;
+        .title::after{
+            content: "m/s";
+        }
+    }
+    #wind_direction{
+        @include setDetails;
+        .title::after{
+            content: "°";
+        }
+    }
+}
+
+@media screen and (max-width: 750px){
+    .details div{
+        flex-basis: 50%;
+    }
+}
+
+.footer{
+    padding: 20px;
+    font-size: $font-size-caption;
+    color: $font-color-caption;
+    background: $bg-light-grey;
+}

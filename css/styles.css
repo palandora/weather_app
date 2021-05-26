@@ -1,0 +1,275 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&display=swap");
+* {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 80%;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #efefef;
+}
+
+.divider {
+  background-color: #efefef;
+  height: 1px;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.header .menu {
+  display: none;
+  padding: 8px 0;
+  position: absolute;
+  left: 20px;
+  top: 56px;
+  background-color: white;
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #efefef;
+  border-radius: 8px;
+}
+
+.header .menu > div {
+  padding: 8px 20px;
+}
+
+.header .menu > div:hover {
+  background-color: #fbfbfb;
+}
+
+.header .location {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .location span {
+  padding-right: 4px;
+}
+
+.header .location svg {
+  fill: #B5B5B5;
+}
+
+.mainInformation {
+  padding: 20px;
+  font-size: 40px;
+  font-weight: 800;
+  color: #B5B5B5;
+}
+
+.mainInformation span {
+  color: #FF6B18;
+}
+
+.mainInformation #degrees::after {
+  content: " °C";
+}
+
+.details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background: #fbfbfb;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.details #humidity {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details #humidity .label {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding-left: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.details #humidity .label .caption {
+  font-size: 12px;
+  color: #B5B5B5;
+}
+
+.details #humidity .label .title {
+  font-weight: 700;
+}
+
+.details #humidity .title::after {
+  content: "%";
+}
+
+.details #wind {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details #wind .label {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding-left: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.details #wind .label .caption {
+  font-size: 12px;
+  color: #B5B5B5;
+}
+
+.details #wind .label .title {
+  font-weight: 700;
+}
+
+.details #wind .title::after {
+  content: "m/s";
+}
+
+.details #gusts {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details #gusts .label {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding-left: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.details #gusts .label .caption {
+  font-size: 12px;
+  color: #B5B5B5;
+}
+
+.details #gusts .label .title {
+  font-weight: 700;
+}
+
+.details #gusts .title::after {
+  content: "m/s";
+}
+
+.details #wind_direction {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details #wind_direction .label {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding-left: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.details #wind_direction .label .caption {
+  font-size: 12px;
+  color: #B5B5B5;
+}
+
+.details #wind_direction .label .title {
+  font-weight: 700;
+}
+
+.details #wind_direction .title::after {
+  content: "°";
+}
+
+@media screen and (max-width: 750px) {
+  .details div {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+}
+
+.footer {
+  padding: 20px;
+  font-size: 12px;
+  color: #B5B5B5;
+  background: #fbfbfb;
+}
