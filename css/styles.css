@@ -260,6 +260,12 @@ body {
   content: "°";
 }
 
+.details #wind_direction svg {
+  --rotation: 0deg;
+  -webkit-transform: rotate(var(--rotation));
+          transform: rotate(var(--rotation));
+}
+
 @media screen and (max-width: 750px) {
   .details div {
     -ms-flex-preferred-size: 50%;

@@ -63,6 +63,7 @@ body {
     height: 1px;
 }
 
+
 .header{
     display: flex;
     position: relative;
@@ -152,8 +153,13 @@ body {
         .title::after{
             content: "°";
         }
+        svg{
+            --rotation: 0deg;
+            transform: rotate(var(--rotation));
+        }
     }
 }
+
 
 @media screen and (max-width: 750px){
     .details div{

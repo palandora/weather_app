@@ -11,6 +11,7 @@ const titleHumidity = document.querySelector("#humidity .title");
 const titleWind = document.querySelector("#wind .title");
 const titleGusts = document.querySelector("#gusts .title");
 const titleWindDir = document.querySelector("#wind_direction .title");
+const svgWindDir = document.querySelector("#wind_direction svg");
 let gotClicked = true;
 
 setCurrentTime();
@@ -23,15 +24,17 @@ const setHtmlContents = (data) => {
     titleWind.textContent = data.wind.speed;
     titleGusts.textContent = data.wind.gust;
     titleWindDir.textContent = data.wind.deg;  
+    svgWindDir.style.transform = `rotate(${data.wind.deg}deg)`;
 }
 
 async function getData(cityName){
     let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=31eac4b79a1e9d6a5b146af42f1b6a80&units=metric`;
     const response = await fetch(apiUrl);
     const data = await response.json();
-    console.log(data);
     setHtmlContents(data);   
 }
+
+
 
 function setCurrentTime (){
     let currentDate = new Date();
@@ -67,6 +70,8 @@ const setCity = () =>{
                     getData("Vienna");
                     break;
             }
+            gotClicked = true;
+            showMenu();
         });
     }
 }
