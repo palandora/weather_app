@@ -12,7 +12,7 @@ const titleWind = document.querySelector("#wind .title");
 const titleGusts = document.querySelector("#gusts .title");
 const titleWindDir = document.querySelector("#wind_direction .title");
 const svgWindDir = document.querySelector("#wind_direction svg");
-let gotClicked = true;
+let gotClicked = false;
 
 setCurrentTime();
 getData("Vienna");
